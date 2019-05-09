@@ -60,6 +60,9 @@
                 for (i = 0; i < response.data.length; i++) { 
                     let reviewText = response.data[i].caption.text;
                     $("#reviews").append("<p>" + reviewText + "</p>");
+                    let reviewImage = response.data[i].images.standard_resolution.url;
+                    console.log();
+                    $("#reviews").append('<img src = "' + reviewImage + '">');
                 }
             }
         });
