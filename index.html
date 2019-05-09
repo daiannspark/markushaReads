@@ -5,6 +5,7 @@
     <title>Markusha reads</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
+    <script src="node_modules\jquery\dist\jquery.min.js"></script>
 </head>
 
 <body>
@@ -18,8 +19,6 @@
                     <a href="#">ХОТЕЛКИ</a>
                     <a href="#">КОНТАКТЫ</a>
                     <a href="#">ПОИСК</a>
-
-
                 </div>
             </div>
         </div>
@@ -37,6 +36,7 @@
                     </hr>
             </div>
         </div>
+        <div id='reviews'></div>
     </div>
     <div id="footer">
         <div class="row">
@@ -48,6 +48,22 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+        $.ajax({
+        type: "GET",
+        dataType: "jsonp",
+        url: "https://api.instagram.com/v1/users/11571354409/media/recent/?access_token=11571354409.cdd9782.2a2a5da540d74d83b5ffc42238ae796a",
+        success: function(response) {
+                console.log(response);
+
+                var i;
+                for (i = 0; i < response.data.length; i++) { 
+                    let reviewText = response.data[i].caption.text;
+                    $("#reviews").append("<p>" + reviewText + "</p>");
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
