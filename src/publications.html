@@ -5,24 +5,11 @@
     <title>Markusha reads</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
-    <script src="node_modules\jquery\dist\jquery.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body>
-    <div id="header">
-        <div class="row">
-            <div class="col-lg-12" id="mainNavBar">
-                <div id="navMenu">
-                    <a href="#">ОБО МНЕ</a>
-                    <a href="#">НОВИНКИ</a>
-                    <a href="#">ОТЗЫВЫ</a>
-                    <a href="#">ХОТЕЛКИ</a>
-                    <a href="#">КОНТАКТЫ</a>
-                    <a href="#">ПОИСК</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="header"></div>
     <div id="mainPart">
         <div class="row">
             <div class="col-lg-12 col-sm-12">
@@ -38,16 +25,11 @@
         </div>
         <div id='reviews'></div>
     </div>
-    <div id="footer">
-        <div class="row">
-            <div class="col-lg-12 col-sm-12">
-                <p class="allrightreserved">
-                    <span> Developed by ME </span> <br />
-                    All Rights Reserved. &copy; Copyright. </p>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+    <div id="footer"></div>
+    <script>
+        $( "#header" ).load( "includes/header.html" );
+        $( "#footer" ).load( "includes/footer.html" );
+    </script>
     <script>
         $.ajax({
         type: "GET",
